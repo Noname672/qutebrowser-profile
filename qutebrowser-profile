@@ -527,7 +527,11 @@ def main(
             profile_name = choice.decode('utf-8').rstrip()
 
             try:
+                if profile_name == "":
+                   sys.exit(0) 
+                
                 profile = qp.get_profile(profile_name)
+            
 
             except NoSuchProfileError:
                 if not new:
